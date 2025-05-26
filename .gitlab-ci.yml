@@ -8,7 +8,7 @@ pages: # The job name MUST be 'pages' for GitLab Pages to recognize it
     - cat app.json
     - yarn install
     - yarn predeploy
-    - mv public .public # Rename the initial 'public' directory
+    # - mv public .public # Rename the initial 'public' directory
     - mkdir public
     - mv dist/* public/ # Move built files to the 'public' directory
   artifacts:
