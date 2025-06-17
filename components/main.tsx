@@ -326,7 +326,7 @@ const Distances = () => {
                     <Text>Zero drop, MOA</Text>
                     <InputSpinner
                         min={0}
-                        max={200}
+                        max={300}
                         step={5}
                         // longStep={10}
                         editable={false}
@@ -344,7 +344,7 @@ const Distances = () => {
                     <Text>Target distance, m</Text>
                     <InputSpinner
                         min={0}
-                        max={2500}
+                        max={3000}
                         step={100}
                         // longStep={10}
                         editable={false}
@@ -360,7 +360,7 @@ const Distances = () => {
                     <Text>Target drop, MOA</Text>
                     <InputSpinner
                         min={0}
-                        max={200}
+                        max={300}
                         step={5}
                         // longStep={10}
                         editable={false}
@@ -442,8 +442,8 @@ const Controls = () => {
 
             <Text style={{ paddingTop: 10 }}>Zero Y, px</Text>
             <InputSpinner
-                min={-250}
-                max={250}
+                min={-300}
+                max={300}
                 step={5}
                 // longStep={10}
                 editable={false}
