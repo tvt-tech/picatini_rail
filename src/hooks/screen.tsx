@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
 // Default settings
 const defaultValues = {
@@ -15,7 +15,7 @@ const defaultValues = {
 
 // Type definitions
 type ScreenSettings = typeof defaultValues;
-type ScreenContextType = ScreenSettings & { 
+type ScreenContextType = ScreenSettings & {
   setValues: (values: Partial<ScreenSettings>) => void;
   px2moa: (value: number, height: number) => number;
   moa2px: (value: number, height: number) => number;
@@ -25,8 +25,8 @@ type ScreenContextType = ScreenSettings & {
 const ScreenContext = createContext<ScreenContextType>({
   ...defaultValues,
   setValues: () => {}, // No-op function
-  px2moa: (value: number, height: number) => value, // Placeholder function
-  moa2px: (value: number, height: number) => value, // Placeholder function
+  px2moa: (value: number) => value, // Placeholder function
+  moa2px: (value: number) => value, // Placeholder function
 });
 
 // Provider Component
@@ -36,23 +36,25 @@ interface ScreenProviderProps {
 
 export const ScreenProvider: React.FC<ScreenProviderProps> = ({ children }) => {
   const [state, setState] = useState<ScreenSettings>(defaultValues);
-  
+
   // Function to update values
   const setValues = (values: Partial<ScreenSettings>) => {
     setState((prev) => ({ ...prev, ...values }));
   };
 
-  const scale = (height: number) => state.screenHeight / height
-  const px2moa = (value: number, height: number) => value * state.screenClick * 0.3 * scale(height)
-  const moa2px = (value: number, height: number) => value / 0.3 / state.screenClick / scale(height)
+  const scale = (height: number) => state.screenHeight / height;
+  const px2moa = (value: number, height: number) => value * state.screenClick * 0.3 * scale(height);
+  const moa2px = (value: number, height: number) => value / 0.3 / state.screenClick / scale(height);
 
   return (
-    <ScreenContext.Provider value={{ 
-      ...state, 
-      setValues, 
-      px2moa,
-      moa2px,
-    }}>
+    <ScreenContext.Provider
+      value={{
+        ...state,
+        setValues,
+        px2moa,
+        moa2px,
+      }}
+    >
       {children}
     </ScreenContext.Provider>
   );
