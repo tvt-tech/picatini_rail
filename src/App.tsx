@@ -329,8 +329,8 @@ function Controls() {
 export default function App() {
   return (
     <ScreenProvider>
-      <div className="min-h-screen bg-[#25232a]">
-        <div className="mx-auto w-full min-w-[375px] max-w-[720px] p-2.5">
+      <div className="min-h-screen overflow-x-hidden bg-[#25232a]">
+        <div className="mx-auto w-full max-w-[720px] p-2.5">
           <Reticle />
           <Controls />
         </div>
