@@ -213,7 +213,7 @@ function Reticle() {
   return (
     <div
       ref={containerRef}
-      className="mb-2.5 aspect-[1.25] w-full overflow-hidden rounded bg-neutral-800 shadow-md"
+      className="mb-2.5 aspect-[1.25] w-full overflow-hidden rounded bg-[#2c2831] shadow-md"
     >
       {size.width > 0 && size.height > 0 && (
         <svg width={size.width} height={size.height}>
@@ -290,7 +290,7 @@ function Controls() {
   const { setValues, zeroY, railAngle, screenClick } = useScreenSettings();
 
   return (
-    <div className="w-full flex-1 rounded bg-neutral-800 p-2.5 shadow-md">
+    <div className="w-full flex-1 rounded bg-[#2c2831] p-2.5 shadow-md">
       <span className="block pt-2.5 text-white">Click size, cm/100m</span>
       <NumberSpinner
         precision={2}
@@ -329,8 +329,8 @@ function Controls() {
 export default function App() {
   return (
     <ScreenProvider>
-      <div className="min-h-screen bg-neutral-900">
-        <div className="mx-auto w-full max-w-[800px] p-2.5">
+      <div className="min-h-screen bg-[#25232a]">
+        <div className="mx-auto w-full min-w-[375px] max-w-[720px] p-2.5">
           <Reticle />
           <Controls />
         </div>

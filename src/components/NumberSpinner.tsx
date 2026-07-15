@@ -52,11 +52,11 @@ export default function NumberSpinner({
   };
 
   return (
-    <div className="flex items-stretch overflow-hidden rounded border border-neutral-600 bg-neutral-800">
+    <div className="flex items-stretch overflow-hidden rounded border border-[#3e525f] bg-[#2c2831]">
       <button
         type="button"
         onClick={decrement}
-        className="bg-neutral-600 px-3 py-2 font-bold text-white hover:bg-neutral-500 active:bg-neutral-400"
+        className="bg-[#3e525f] px-3 py-2 font-bold text-white hover:bg-[#4b6472] active:bg-[#587690]"
       >
         −
       </button>
@@ -80,7 +80,7 @@ export default function NumberSpinner({
       <button
         type="button"
         onClick={increment}
-        className="bg-neutral-600 px-3 py-2 font-bold text-white hover:bg-neutral-500 active:bg-neutral-400"
+        className="bg-[#3e525f] px-3 py-2 font-bold text-white hover:bg-[#4b6472] active:bg-[#587690]"
       >
         +
       </button>
